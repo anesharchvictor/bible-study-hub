@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lovely Bible Study Companion - Personal Digital Ark</title>
+  <meta name="description" content="An interactive, high-fidelity proof-of-concept for exploring, studying, and gamifying the Book of Ezekiel. Driven by the Personal Digital Ark (PDA) Framework.">
+  
+  <!-- Modern Premium Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Background Glowing Orbs (Modern Design) -->
+  <div class="glow-orb orb-1"></div>
+  <div class="glow-orb orb-2"></div>
+  <div class="glow-orb orb-3"></div>
+
+  <div class="app-container">
+    
+    <!-- Premium Header -->
+    <header class="app-header">
+      <div class="header-badge">🏛️ Personal Digital Ark Node 0</div>
+      <h1 class="app-title">Study the Bible with Lovely</h1>
+      <p class="app-subtitle">An interactive learning companion and trivia sandbox exploring the theological and historical depth of the <strong>Book of Ezekiel</strong>.</p>
+    </header>
+
+    <!-- Main Workspace Layout -->
+    <main class="workspace-grid">
+      
+      <!-- Left Column: Search & Q&A + Habit Tracker -->
+      <section class="workspace-column column-left">
+        
+        <!-- Live AI-Style Q&A Card -->
+        <div class="card glass-card" id="qa-card">
+          <div class="card-header">
+            <span class="card-icon">⚡</span>
+            <h2>Ezekiel Semantic Q&A Gateway</h2>
+          </div>
+          <p class="card-desc">Ask any question about Ezekiel (e.g., <em>"What is the watchman's job?"</em>, <em>"Who is Gog?"</em>, <em>"Tell me about the dry bones"</em>) to query your synced knowledgebase.</p>
+          
+          <div class="qa-input-wrapper">
+            <input type="text" id="qa-query" placeholder="Ask a question about the Book of Ezekiel..." aria-label="Ask a question about the Book of Ezekiel">
+            <button id="qa-submit-btn" type="button">Query Ark</button>
+          </div>
+
+          <div class="suggested-queries">
+            <button class="suggestion-tag" data-query="What is the vision of God's glory?">Vision of Glory</button>
+            <button class="suggestion-tag" data-query="Tell me about the valley of dry bones">Valley of Dry Bones</button>
+            <button class="suggestion-tag" data-query="What is the watchman and the siege?">Watchman & Siege</button>
+            <button class="suggestion-tag" data-query="What happened to the shipwreck of Tyre?">Shipwreck of Tyre</button>
+          </div>
+
+          <!-- Dynamic Response Box -->
+          <div class="qa-response-box hidden" id="qa-response">
+            <div class="response-status">
+              <span class="status-indicator-dot pulsing"></span>
+              <span class="status-text">PDA Semantic Engine Synthesizing...</span>
+            </div>
+            <div class="response-body" id="qa-response-text"></div>
+            <div class="response-citation" id="qa-response-citation"></div>
+          </div>
+        </div>
+
+        <!-- Daily Reflection & Habits -->
+        <div class="card glass-card" id="habit-card">
+          <div class="card-header">
+            <span class="card-icon">🌱</span>
+            <h2>Daily Reflection & Habit Builder</h2>
+          </div>
+          <p class="card-desc">PDA synchronization habit loop. Commit to daily archival engagement to lock in knowledge retention.</p>
+          
+          <div class="habit-tracker-box">
+            <div class="streak-badge">
+              <span class="streak-number" id="streak-count">0</span>
+              <span class="streak-label">Day Streak 🔥</span>
+            </div>
+            <div class="habit-action">
+              <h3>Today's Milestone:</h3>
+              <p>Read a summary chapter or complete one trivia card today.</p>
+              <button id="habit-check-btn" type="button">Mark Complete for Today</button>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- Right Column: Interactive Trivia + Chapter Explorer -->
+      <section class="workspace-column column-right">
+        
+        <!-- Trivia Challenge Card -->
+        <div class="card glass-card" id="trivia-card">
+          <div class="card-header">
+            <span class="card-icon">🏆</span>
+            <h2>Ezekiel Trivia Challenge</h2>
+          </div>
+          <p class="card-desc">Test your semantic memory with structured multiple-choice trivia compiled directly from your study chapters.</p>
+          
+          <!-- Trivia Active State -->
+          <div class="trivia-container" id="trivia-game">
+            <div class="trivia-progress">
+              <span id="trivia-current-q">Question 1 of 5</span>
+              <div class="progress-bar-bg">
+                <div class="progress-bar-fill" id="trivia-progress-bar"></div>
+              </div>
+            </div>
+            
+            <div class="trivia-question-box" id="trivia-question">
+              <!-- Rendered via JS -->
+            </div>
+            
+            <div class="trivia-options-list" id="trivia-options">
+              <!-- Rendered via JS -->
+            </div>
+
+            <div class="trivia-footer">
+              <div class="score-pill">Score: <span id="trivia-score">0</span></div>
+              <button id="trivia-next-btn" class="hidden" type="button">Next Question →</button>
+            </div>
+          </div>
+
+          <!-- Trivia Success/Completion Screen -->
+          <div class="trivia-results hidden" id="trivia-results-screen">
+            <div class="results-badge">🎉 Score: <span id="final-score">0</span>/5</div>
+            <h3>Superb Memory retention!</h3>
+            <p>You have successfully validated Node 0 core theological checkpoints.</p>
+            <button id="trivia-restart-btn" type="button">Play Again</button>
+          </div>
+        </div>
+
+        <!-- Scroll-Driven Chapter Explorer Carousel -->
+        <div class="card glass-card" id="carousel-card">
+          <div class="card-header">
+            <span class="card-icon">📖</span>
+            <h2>Ezekiel Chapter Explorer</h2>
+          </div>
+          <p class="card-desc">Browse through your consolidated study notes index. Filter by major prophetic themes.</p>
+
+          <div class="carousel-filters">
+            <button class="filter-btn active" data-filter="all">All Chapters</button>
+            <button class="filter-btn" data-filter="vision">Visions & Glory</button>
+            <button class="filter-btn" data-filter="judgment">Judgments</button>
+            <button class="filter-btn" data-filter="hope">Restoration & Hope</button>
+          </div>
+
+          <!-- The Horizontal Scroller -->
+          <div class="carousel-viewport">
+            <ul class="scroller" id="chapter-scroller">
+              <!-- Rendered dynamically in app.js -->
+            </ul>
+          </div>
+          <div class="carousel-hint">← Swipe or Scroll horizontally to explore →</div>
+        </div>
+
+      </section>
+
+    </main>
+
+    <!-- Premium Footer -->
+    <footer class="app-footer">
+      <p>© 2026 Personal Digital Ark Node 0. Synced with local medallic directories `/100_Raw_Archive/Study_the_Bible/`.</p>
+      <p class="tech-stack-details">Tech Stack: Native ECMAScript 6, Custom Vanilla CSS Grid, Local Storage Cache, Fluid HSL Color Space.</p>
+    </footer>
+  </div>
+
+  <!-- Glassmorphism Chapter Detail Dialog (Standard Modal UX) -->
+  <dialog id="chapter-dialog" class="glass-modal">
+    <div class="modal-content">
+      <button id="modal-close-btn" class="modal-close" type="button" aria-label="Close modal">&times;</button>
+      <div id="modal-body">
+        <!-- Dynamically populated via app.js -->
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Confetti Canvas (for trivia wins!) -->
+  <canvas id="confetti-canvas"></canvas>
+
+  <!-- Javascript -->
+  <script src="app.js"></script>
+</body>
+</html>
