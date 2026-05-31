@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Lovely Bible Study Companion - Personal Digital Ark</title>
-  <meta name="description" content="An interactive, high-fidelity proof-of-concept for exploring, studying, and gamifying the Book of Ezekiel. Driven by the Personal Digital Ark (PDA) Framework.">
+  <meta name="description" content="An interactive, high-fidelity proof-of-concept for exploring, studying, and gamifying the Books of Ezekiel, Daniel, Jeremiah, and Song of Solomon. Driven by the Personal Digital Ark (PDA) Framework.">
   
   <!-- Modern Premium Typography -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -27,7 +27,7 @@
     <header class="app-header">
       <div class="header-badge">🏛️ Personal Digital Ark Node 0</div>
       <h1 class="app-title">Study the Bible with Lovely</h1>
-      <p class="app-subtitle">An interactive learning companion and trivia sandbox exploring the theological and historical depth of the <strong>Book of Ezekiel</strong>.</p>
+      <p class="app-subtitle">An interactive learning companion and trivia sandbox exploring the theological and historical depth of <strong>Ezekiel, Daniel, Jeremiah, and Song of Solomon</strong>.</p>
     </header>
 
     <!-- Main Workspace Layout -->
@@ -40,20 +40,20 @@
         <div class="card glass-card" id="qa-card">
           <div class="card-header">
             <span class="card-icon">⚡</span>
-            <h2>Ezekiel Semantic Q&A Gateway</h2>
+            <h2>Multi-Book Semantic Q&A Gateway</h2>
           </div>
-          <p class="card-desc">Ask any question about Ezekiel (e.g., <em>"What is the watchman's job?"</em>, <em>"Who is Gog?"</em>, <em>"Tell me about the dry bones"</em>) to query your synced knowledgebase.</p>
+          <p class="card-desc">Ask any question about Ezekiel, Daniel, Jeremiah, or Song of Solomon (e.g., <em>"What is the fiery furnace?"</em>, <em>"Who is Gog?"</em>, <em>"Explain the New Covenant"</em>) to query your synced knowledgebase.</p>
           
           <div class="qa-input-wrapper">
-            <input type="text" id="qa-query" placeholder="Ask a question about the Book of Ezekiel..." aria-label="Ask a question about the Book of Ezekiel">
+            <input type="text" id="qa-query" placeholder="Ask a question about Ezekiel, Daniel, Jeremiah, or Song of Solomon..." aria-label="Ask a question about Ezekiel, Daniel, Jeremiah, or Song of Solomon">
             <button id="qa-submit-btn" type="button">Query Ark</button>
           </div>
 
           <div class="suggested-queries">
-            <button class="suggestion-tag" data-query="What is the vision of God's glory?">Vision of Glory</button>
-            <button class="suggestion-tag" data-query="Tell me about the valley of dry bones">Valley of Dry Bones</button>
-            <button class="suggestion-tag" data-query="What is the watchman and the siege?">Watchman & Siege</button>
-            <button class="suggestion-tag" data-query="What happened to the shipwreck of Tyre?">Shipwreck of Tyre</button>
+            <button class="suggestion-tag" data-query="What is the vision of God's glory in Ezekiel?">Vision of Glory</button>
+            <button class="suggestion-tag" data-query="Tell me about the fiery furnace in Daniel">Fiery Furnace</button>
+            <button class="suggestion-tag" data-query="Explain the New Covenant in Jeremiah">New Covenant</button>
+            <button class="suggestion-tag" data-query="Tell me about love and the seal in Song of Solomon">Unquenchable Love</button>
           </div>
 
           <!-- Dynamic Response Box -->
@@ -97,9 +97,9 @@
         <div class="card glass-card" id="trivia-card">
           <div class="card-header">
             <span class="card-icon">🏆</span>
-            <h2>Ezekiel Trivia Challenge</h2>
+            <h2>Multi-Book Trivia Challenge</h2>
           </div>
-          <p class="card-desc">Test your semantic memory with structured multiple-choice trivia compiled directly from your study chapters.</p>
+          <p class="card-desc">Test your semantic memory with structured multiple-choice trivia compiled directly from Ezekiel, Daniel, Jeremiah, and Song of Solomon.</p>
           
           <!-- Trivia Active State -->
           <div class="trivia-container" id="trivia-game">
@@ -137,15 +137,16 @@
         <div class="card glass-card" id="carousel-card">
           <div class="card-header">
             <span class="card-icon">📖</span>
-            <h2>Ezekiel Chapter Explorer</h2>
+            <h2>Multi-Book Chapter Explorer</h2>
           </div>
-          <p class="card-desc">Browse through your consolidated study notes index. Filter by major prophetic themes.</p>
+          <p class="card-desc">Browse through your consolidated study notes index. Filter by major prophetic and theological themes.</p>
 
           <div class="carousel-filters">
             <button class="filter-btn active" data-filter="all">All Chapters</button>
             <button class="filter-btn" data-filter="vision">Visions & Glory</button>
             <button class="filter-btn" data-filter="judgment">Judgments</button>
             <button class="filter-btn" data-filter="hope">Restoration & Hope</button>
+            <button class="filter-btn" data-filter="intimacy">Love & Intimacy</button>
           </div>
 
           <!-- The Horizontal Scroller -->
